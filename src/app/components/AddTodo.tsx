@@ -2,7 +2,7 @@ import { useEffect, useRef, type FormEvent } from 'react'
 import { useTodoContext } from '../hooks/useTodoContext'
 
 export default function AddTodo() {
-  const { addTodo } = useTodoContext()!
+  const { addTodo } = useTodoContext()
   const todoTextInputRef = useRef<HTMLInputElement>(null)
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {

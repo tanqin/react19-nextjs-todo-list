@@ -2,7 +2,9 @@
 import { TodoContext } from './TodoContext'
 import { useTodos } from './hooks/useTodos'
 import AddTodo from './components/AddTodo'
-import TodoList from './components/TodoList'
+import dynamic from 'next/dynamic'
+
+const NoSSRTodoList = dynamic(() => import('./components/TodoList'), { ssr: false })
 
 export default function Home() {
   const todoHook = useTodos()
@@ -12,7 +14,7 @@ export default function Home() {
       <div className='absolute left-1/2 -translate-x-1/2 w-full sm:max-w-sm flex flex-col items-center'>
         <h1 className='font-bold text-3xl m-2.5'>Todo List</h1>
         <AddTodo />
-        <TodoList />
+        <NoSSRTodoList />
       </div>
     </TodoContext.Provider>
   )
