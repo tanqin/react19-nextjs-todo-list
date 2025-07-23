@@ -16,7 +16,9 @@ export default function TodoList() {
             onClick={() => toggleTodo(todo.id)}>
             {todo.text}
           </span>
-          <button onClick={() => removeTodo(todo.id)}>✖</button>
+          <button className='text-red-400' onClick={() => removeTodo(todo.id)}>
+            ✖
+          </button>
         </li>
       ))}
     </ul>
