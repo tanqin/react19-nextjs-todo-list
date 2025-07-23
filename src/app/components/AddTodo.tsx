@@ -24,7 +24,7 @@ export default function AddTodo() {
     <form className='mb-2.5' onSubmit={handleSubmit}>
       <input className='pl-0.25 border focus:outline-none focus:border' type='text' name='todoText' placeholder='新增 Todo' ref={todoTextInputRef} />
       <button className='border ml-2 px-1' type='submit'>
-        提交
+        添加
       </button>
     </form>
   )
