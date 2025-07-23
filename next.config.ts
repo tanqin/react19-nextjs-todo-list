@@ -2,14 +2,16 @@ import type { NextConfig } from 'next'
 
 import { name } from './package.json'
 
+// 基础路径
+const NEXT_PUBLIC_BASE_PATH = process.env.NODE_ENV === 'production' ? `/${name}` : ''
+
 const nextConfig: NextConfig = {
   /* config options here */
   // devIndicators: false,
-  basePath: process.env.NODE_ENV === 'production' ? `/${name}` : '',
-  // assetPrefix: process.env.NODE_ENV === 'production' ? `/${name}/` : '',
+  basePath: NEXT_PUBLIC_BASE_PATH,
   output: 'export', // 启用静态导出
-  images: {
-    unoptimized: true // 静态导出需禁用图片优化
+  env: {
+    NEXT_PUBLIC_BASE_PATH
   }
 }
 

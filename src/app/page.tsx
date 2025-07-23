@@ -9,12 +9,11 @@ const NoSSRTodoList = dynamic(() => import('./components/TodoList'), { ssr: fals
 
 export default function Home() {
   const todoHook = useTodos()
-
   return (
     <TodoContext.Provider value={todoHook}>
       <div className='absolute left-1/2 -translate-x-1/2 w-full sm:max-w-sm flex flex-col items-center'>
         <h1 className='flex font-bold text-3xl m-2.5'>
-          <Image className='mr-1' src='/todo.svg' alt='todo' width={20} height={20} /> Todo List
+          <Image className='mr-1' src={`${process.env.NEXT_PUBLIC_BASE_PATH}/todo.svg`} alt='todo' width={20} height={20} /> Todo List
         </h1>
         <AddTodo />
         <NoSSRTodoList />
