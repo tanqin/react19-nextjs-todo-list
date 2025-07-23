@@ -5,7 +5,7 @@ export default function TodoList() {
   // 一行代码，轻松获取全局状态和方法
   const { todos, toggleTodo, removeTodo } = useTodoContext()
   return (
-    <ul className='w-full px-3.5 text-lg'>
+    <ul className='flex-1 w-full px-3.5 overflow-auto text-lg'>
       {todos.map(todo => (
         <li className='cursor-pointer' key={todo.id}>
           <input type='checkbox' checked={todo.completed} onChange={() => toggleTodo(todo.id)} />

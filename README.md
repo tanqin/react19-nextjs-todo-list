@@ -1,4 +1,4 @@
-基于 React19、Next15 实现的 Todo List 案例。
+基于 React19、Next15、tailwindcss 实现的 Todo List 案例。
 
 ## 开始
 
@@ -6,12 +6,6 @@
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
